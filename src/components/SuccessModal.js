@@ -71,7 +71,7 @@ function SuccessModal(props) {
                     <Typography style={{fontSize:"18px"}}> {cpmToDiscription(cpm)}</Typography>
                 </Box>
                 <Box marginTop="40px">
-                    <Button href="" color="primary" variant="contained">もう一度</Button>
+                    <Button onClick={props.refreshAll} color="primary" variant="contained">もう一度</Button>
                 </Box>
             </div>
             

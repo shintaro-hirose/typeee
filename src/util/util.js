@@ -10,7 +10,7 @@ export const timeFormatting = (ms) => {
 }
 
 export const cpmToRank = (cpm) => {
-    if(cpm>=700){
+    if(cpm>=600){
         return "地球外生命体";
     } else if(cpm >= 500){
         return "よく訓練されたプロ";
@@ -36,12 +36,12 @@ export const cpmToRank = (cpm) => {
 }
 
 export const cpmToDiscription = (cpm) => {
-    if(cpm>=700){
+    if(cpm>=600){
         return "全く、脱帽しました。あなたの手の指は何本あるのでしょう？もしかしたら10本より多くあるかもしれません。";
     } else if(cpm >= 500){
-        return "素晴らしい！あなたは世界レベルのタイピストです。違う仕事をしているのならばすぐに転身することです。";
+        return "素晴らしい！あなたは世界レベルのタイピストです。いまこそ世界にその存在を知らしめるのです！";
     } else if(cpm >= 430){
-        return "なんということでしょう！どういうわけかあなたはプロの中でも速い方になってしまいました！もっと上を目指すべきです。"
+        return "なんということでしょう！どういうわけかあなたはプロの中でも速い方になってしまいました！あなたなら世界も狙えるはずです！"
     } else if(cpm >= 375){
         return "「プロフェッショナル」といったいどれだけの人が呼ばれることができるでしょう？あなたはこの結果を今すぐに自慢するべきです！"
     } else if(cpm >= 330){

@@ -71,6 +71,7 @@ function Home() {
     const [timeOfTyping, setTimeOfTyping] = useState(0);
     const [result, setResult] = useState({});
     const [modalOpen, setModalOpen] = useState(false);
+    const [refresh, setRefresh] = useState("");
 
     let timer = useRef(null);
 
@@ -85,7 +86,7 @@ function Home() {
         let newTypingString = ts.slice(0,-1)
         setTypingString(newTypingString);
         setLoading(false);
-    }, [])
+    }, [refresh])
 
     const handleKeyPress = (e) => {
         if(finished) return;
@@ -113,6 +114,19 @@ function Home() {
             setIsMisstype(true);
             setMissCount(missCount + 1)
         }
+    }
+
+    const refreshAll = () => {
+        setLoading(false);
+        setCurrentIndex(0);
+        setIsMisstype(false);
+        setMissCount(0);
+        setFinished(false);
+        setStarted(false);
+        setTimeOfTyping(0);
+        setResult({});
+        setModalOpen(false);
+        setRefresh(Math.random())
     }
 
 
@@ -154,7 +168,9 @@ function Home() {
                         CPM:  {(currentIndex === 0) ? "-" : (currentIndex / timeOfTyping * 1000 * 60).toFixed(0)}
                     </Typography>
                 </Box>
-                <SuccessModal result={result} modalOpen={modalOpen} modalClose={() => setModalOpen(false)}/>
+                <SuccessModal result={result} modalOpen={modalOpen} modalClose={() => setModalOpen(false)} 
+                refreshAll={refreshAll}
+                />
             </div>
         )
        

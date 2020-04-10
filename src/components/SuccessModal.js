@@ -10,6 +10,8 @@ import logo from '.././images/typeee-logo.svg';
 import {timeFormatting, cpmToRank, cpmToDiscription} from '../util/util';
 import Typography from '@material-ui/core/Typography';
 
+import {TwitterShareButton, TwitterIcon} from 'react-share';
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: 'flex',
@@ -70,9 +72,19 @@ function SuccessModal(props) {
                 <Box marginTop="20px" maxWidth="500px" >
                     <Typography style={{fontSize:"18px"}}> {cpmToDiscription(cpm)}</Typography>
                 </Box>
-                <Box marginTop="40px">
+                <Box display="flex" justifyContent="center" m={4}>
                     <Button onClick={props.refreshAll} color="primary" variant="contained">もう一度</Button>
+                    <Box marginLeft="50px">
+                      <TwitterShareButton 
+                      url="https://shintaro-hirose.github.io/typeee/" 
+                      title={`typeee!でタイピング速度を計測しました！ ${result.charLength}文字, ${timeFormatting(result.timeOfTyping)}秒, 精度 ${(result.charLength/(result.charLength+result.missCount) * 100).toFixed(1)} %, ${cpm} CPM, 評価は "${cpmToRank(cpm)}" でした。`} 
+                      hashtags={["typeee"]}>
+                        <TwitterIcon size={40} round={true}/>
+                      </TwitterShareButton>
+                    </Box>
+                   
                 </Box>
+                
             </div>
             
           </div>

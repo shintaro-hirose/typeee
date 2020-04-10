@@ -69,7 +69,6 @@ function Home() {
     const [finished, setFinished] = useState(false);
     const [started, setStarted] = useState(false);
     const [timeOfTyping, setTimeOfTyping] = useState(0);
-    const [result, setResult] = useState({});
     const [modalOpen, setModalOpen] = useState(false);
     const [refresh, setRefresh] = useState("");
 
@@ -102,11 +101,6 @@ function Home() {
             setCurrentIndex(currentIndex + 1);
             if(currentIndex+1 >= typingString.length){
                 clearInterval(timer.current);
-                setResult({
-                    timeOfTyping,
-                    missCount,
-                    charLength: typingString.length
-                })
                 setFinished(true);
                 setModalOpen(true);
             }
@@ -124,7 +118,6 @@ function Home() {
         setFinished(false);
         setStarted(false);
         setTimeOfTyping(0);
-        setResult({});
         setModalOpen(false);
         setRefresh(Math.random())
     }
@@ -168,7 +161,12 @@ function Home() {
                         CPM:  {(currentIndex === 0) ? "-" : (currentIndex / timeOfTyping * 1000 * 60).toFixed(0)}
                     </Typography>
                 </Box>
-                <SuccessModal result={result} modalOpen={modalOpen} modalClose={() => setModalOpen(false)} 
+                <SuccessModal result={{
+                    timeOfTyping,
+                    missCount,
+                    charLength: typingString.length
+                }}
+                modalOpen={modalOpen} modalClose={() => setModalOpen(false)} 
                 refreshAll={refreshAll}
                 />
             </div>

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/typeee/static/css/main.18e88231.chunk.css",
-    "main.js": "/typeee/static/js/main.98096e53.chunk.js",
-    "main.js.map": "/typeee/static/js/main.98096e53.chunk.js.map",
+    "main.js": "/typeee/static/js/main.d8b5c42d.chunk.js",
+    "main.js.map": "/typeee/static/js/main.d8b5c42d.chunk.js.map",
     "runtime-main.js": "/typeee/static/js/runtime-main.d2f2801e.js",
     "runtime-main.js.map": "/typeee/static/js/runtime-main.d2f2801e.js.map",
     "static/js/2.5bab7033.chunk.js": "/typeee/static/js/2.5bab7033.chunk.js",
     "static/js/2.5bab7033.chunk.js.map": "/typeee/static/js/2.5bab7033.chunk.js.map",
     "index.html": "/typeee/index.html",
-    "precache-manifest.242f3c23ff99678b0b2445fc13f4f779.js": "/typeee/precache-manifest.242f3c23ff99678b0b2445fc13f4f779.js",
+    "precache-manifest.3fb56e23ef7cd5fb751b40e4304acc03.js": "/typeee/precache-manifest.3fb56e23ef7cd5fb751b40e4304acc03.js",
     "service-worker.js": "/typeee/service-worker.js",
     "static/css/main.18e88231.chunk.css.map": "/typeee/static/css/main.18e88231.chunk.css.map",
     "static/js/2.5bab7033.chunk.js.LICENSE.txt": "/typeee/static/js/2.5bab7033.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.d2f2801e.js",
     "static/js/2.5bab7033.chunk.js",
     "static/css/main.18e88231.chunk.css",
-    "static/js/main.98096e53.chunk.js"
+    "static/js/main.d8b5c42d.chunk.js"
   ]
 }

@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import logo from '.././images/typeee-logo.svg';
 import {timeFormatting, cpmToRank, cpmToDiscription} from '../util/util';
 import Typography from '@material-ui/core/Typography';
+import Tooltip from '@material-ui/core/Tooltip';
 
 import {TwitterShareButton, TwitterIcon} from 'react-share';
 
@@ -39,7 +40,11 @@ function SuccessModal(props) {
   const classes = useStyles();
 
   const result = props.result;
-  const cpm = (result.charLength/ result.timeOfTyping * 1000 * 60).toFixed(0);
+  const cpm = (result.charLength === 0 || result.timeOfTyping === 0) ? (
+              -1
+                ) : (
+                  (result.charLength/ result.timeOfTyping * 1000 * 60).toFixed(0)
+                )
 
   return (
     <div>
@@ -75,12 +80,14 @@ function SuccessModal(props) {
                 <Box display="flex" justifyContent="center" m={4}>
                     <Button onClick={props.refreshAll} color="primary" variant="contained">もう一度</Button>
                     <Box marginLeft="50px">
-                      <TwitterShareButton 
-                      url="https://shintaro-hirose.github.io/typeee/" 
-                      title={`typeee!でタイピング速度を計測しました！ ${result.charLength}文字, ${timeFormatting(result.timeOfTyping)}秒, 精度 ${(result.charLength/(result.charLength+result.missCount) * 100).toFixed(1)} %, ${cpm} CPM, 評価は "${cpmToRank(cpm)}" でした。`} 
-                      hashtags={["typeee"]}>
-                        <TwitterIcon size={40} round={true}/>
-                      </TwitterShareButton>
+                      <Tooltip title="結果を投稿する" placement="top">
+                        <TwitterShareButton 
+                        url="https://shintaro-hirose.github.io/typeee/" 
+                        title={`typeee!でタイピング速度を計測しました！ ${result.charLength}文字, ${timeFormatting(result.timeOfTyping)}秒, 精度 ${(result.charLength/(result.charLength+result.missCount) * 100).toFixed(1)} %, ${cpm} CPM, 評価は "${cpmToRank(cpm)}" でした。`} 
+                        hashtags={["typeee"]}>
+                          <TwitterIcon size={40} round={true}/>
+                        </TwitterShareButton>
+                      </Tooltip>
                     </Box>
                    
                 </Box>

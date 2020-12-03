@@ -72,7 +72,7 @@ function Home() {
     const [modalOpen, setModalOpen] = useState(false);
     const [refresh, setRefresh] = useState("");
 
-    let timer = useRef(null);
+    const timer = useRef(null);
 
 
     useEffect(() => {
@@ -111,14 +111,13 @@ function Home() {
     }
 
     const refreshAll = () => {
-        setLoading(false);
+        setModalOpen(false);
         setCurrentIndex(0);
         setIsMisstype(false);
         setMissCount(0);
         setFinished(false);
         setStarted(false);
         setTimeOfTyping(0);
-        setModalOpen(false);
         setRefresh(Math.random())
     }
 
@@ -158,7 +157,7 @@ function Home() {
                 </Box>
                 <Box marginBottom="50px">
                     <Typography className={classes.stats}>
-                        CPM:  {(currentIndex === 0) ? "-" : (currentIndex / timeOfTyping * 1000 * 60).toFixed(0)}
+                        CPM:  {(currentIndex === 0) ? "0" : (currentIndex / timeOfTyping * 1000 * 60).toFixed(0)}
                     </Typography>
                 </Box>
                 <SuccessModal result={{

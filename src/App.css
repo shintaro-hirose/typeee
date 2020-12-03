@@ -1,7 +1,6 @@
 .App {
   text-align: center;
-  background-color: #eeeeee;
-  
+  background-color: #eeeeee; 
 }
 .container {
   max-width: 800px;
@@ -11,6 +10,5 @@
 
 footer {
   background-color: #bdbdbd;
-  font-size: 25px;
   padding: 20px;
 }

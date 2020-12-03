@@ -51,11 +51,13 @@ const useStyles = makeStyles(() => ({
     stats:{
         display: "inline",
         fontSize: "20px",
+        fontFamily:"Meiryo",
         margin: "0 30px",
     },
     rights:{
-        fontSize: "20px",
+        fontSize: "15px",
         padding:"20px",
+        fontFamily:"Meiryo",
     }
 }));
 

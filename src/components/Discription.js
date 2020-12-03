@@ -9,6 +9,7 @@ const useStyles = makeStyles((theme) => ({
     },
     content:{
         fontSize: "16px",
+        fontFamily:"Meiryo",
     },
 }));
 

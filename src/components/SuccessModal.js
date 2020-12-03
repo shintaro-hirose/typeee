@@ -33,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
   content:{
       fontSize:"20px",
       fontFamily: "monospace",
+      fontFamily:"Meiryo",
   }
 }));
 
